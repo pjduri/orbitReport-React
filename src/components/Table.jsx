@@ -3,13 +3,21 @@ const Table = ({ sat }) => {
     <table>
     <thead>
      <tr>
-       <th>Header TBD</th>
+       <th>Name</th>
+       <th>Type</th>
+       <th>Launch Date</th>
+       <th>Status</th>
      </tr>
      </thead>
      <tbody>
-     <tr>
-       <td>Row Data TBD</td>
-     </tr>
+     {sat.map(satellite => (
+      <tr key={satellite.id}>
+        <td>{satellite.name}</td>
+        <td>{satellite.type}</td>
+        <td>{satellite.launchDate}</td>
+        <td>{satellite.operational ? 'active' : 'inactive'}</td>
+      </tr>
+     ))}
      </tbody>
    </table>
   );
